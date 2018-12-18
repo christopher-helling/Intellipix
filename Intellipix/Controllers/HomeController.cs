@@ -129,5 +129,13 @@ namespace Intellipix.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Error(string message)
+        {
+            // Don't actually pass ViewBag message directly to user, this is a security risk
+            // This is just for testing the sample project
+            ViewBag.ErrorMessage = message;
+            return View();
+        }
+
     }
 }
